@@ -1,0 +1,40 @@
+
+
+Enums in JPA
+http://tomee.apache.org/examples-trunk/jpa-enumerated/
+
+
+Kotlin Docs
+https://dzone.com/articles/examining-kotlins-also-apply-let-run-and-with-intentions?fromrel=true
+
+
+Kotlin + Spring
+==================
+Spring JPA Data
+https://blog.codecentric.de/en/2017/06/kotlin-spring-working-jpa-data-classes/
+
+
+
+
+Angular Quickstart Project
+https://github.com/angular/quickstart
+
+
+Angular FullStack
+http://www.thejavageek.com/2017/06/14/full-stack-application-angular-4-spring-boot/
+
+
+Angular + Spring Integration
+=========================================
+1. Con plugins de maven
+https://stackoverflow.com/questions/42593975/make-front-and-backend-angular-2-and-spring-maven-multimodule-project
+
+2. Copiando carpeta dist
+https://www.quora.com/How-do-I-integrate-Angular-2-with-Spring-MVC
+
+
+Angular: Proxy calls to Backend:
+- https://github.com/johnpapa/lite-server/issues/61
+- https://www.npmjs.com/package/lite-server
+- https://stackoverflow.com/questions/38036605/using-lite-server-with-real-data
+- https://stackoverflow.com/questions/40133393/lite-server-pathing-for-local-development

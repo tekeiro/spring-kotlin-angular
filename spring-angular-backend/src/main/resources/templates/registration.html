@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"  />
+    <title>Registration form</title>
+
+    <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap-theme.min.css}" />
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <form action="" method="POST" class="form-registration" autocomplete="off" th:object="${user}">
+                <h3>Registration form</h3>
+                <br/>
+
+                <div class="form-group">
+                    <input type="text" th:field="*{username}" class="form-control"
+                           placeholder="Type username" required="required" />
+                </div>
+                <div class="form-group">
+                    <input type="password" th:field="*{password}" class="form-control"
+                           placeholder="Type password (6 chars min)" required="required" />
+                </div>
+                <div class="form-group">
+                    <input type="text" th:field="*{firstName}" class="form-control"
+                           placeholder="Type first name" required="required" />
+                </div>
+                <div class="form-group">
+                    <input type="text" th:field="*{lastName}" class="form-control"
+                           placeholder="Type last name" required="required" />
+                </div>
+
+                <button class="btn btn-primary btn-lg btn-block">
+                    Register!
+                </button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
