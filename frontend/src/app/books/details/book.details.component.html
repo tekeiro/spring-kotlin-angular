@@ -1,0 +1,30 @@
+
+<div class="book-detail">
+  <div class="row">
+    <div class="col-xs-4">
+      <label class="control-label">Title:</label>
+    </div>
+    <div class="col-xs-8">
+      <span>{{book.title}}</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <label class="control-label">Summary:</label>
+    </div>
+    <div class="col-xs-12">
+      <p class="well">{{book.summary}}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-4">
+      <label class="control-label">Publication date:</label>
+    </div>
+    <div class="col-xs-8">
+      <span>{{book.pubDate | date:'dd/MM/yyyy HH:mm:ss'}}</span>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,44 @@
+
+
+<div class="row">
+  <div class="col-xs-12">
+    <a class="btn btn-xs btn-default" routerLink="/authors/create">+ Create Author</a>
+  </div>
+</div>
+
+<div class="authors">
+  <table class="table table-responsive table-hover table-striped table-authors">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Full Name</th>
+        <th>Birth Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let author of authors">
+        <td>
+          <a (click)="selectAuthor(author)">
+            {{author.id}}
+          </a>
+        </td>
+        <td>{{author.fullName}}</td>
+        <td>{{author.birthDate | date:'dd/MM/yyyy'}}</td>
+        <td>
+          <a [routerLink]="['/authors', author.id]">
+            Edit
+          </a>
+          <a (click)="removeAuthor(author)">
+            Delete
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="selectedAuthor">
+  <author-detail [author]="selectedAuthor"></author-detail>
+</div>
+

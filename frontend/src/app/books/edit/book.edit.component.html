@@ -1,0 +1,46 @@
+
+<section class="book-edit-form" *ngIf="book">
+  <h2>Edition of {{book.title}}</h2>
+  <a class="btn btn-default" (click)="goBack()">
+    Back
+  </a>
+  <p>Debug: {{book | json}}</p>
+  <form #bookEditForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label class="control-label" for="title">Title</label>
+      <input type="text" class="form-control" [(ngModel)]="book.title"
+             name="title" id="title"
+             required maxlength="50" />
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="summary">Summary</label>
+      <textarea class="form-control" [(ngModel)]="book.summary"
+                id="summary" name="summary"
+                rows="5" cols="50"></textarea>
+    </div>
+    <div class="form-group">
+      <label class="form-group" for="pubDate">Publication Date</label>
+      <input type="datetime-local"
+             #myDate
+             [value]="book.pubDate | date:'yyyy-MM-dd\'T\'HH:mm'"
+             (input)="book.pubDate = parseDate(myDate.value)"
+             id="pubDate" name="pubDate"
+             class="form-control" required />
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="author">Author</label>
+      <select class="form-control" id="author" name="author" [(ngModel)]="book.author.id">
+        <option *ngFor="let author of authors" [value]="author.id">
+          {{author.fullName}}
+        </option>
+      </select>
+    </div>
+
+    <button class="btn btn-primary" [disabled]="!bookEditForm.form.valid">
+      Submit
+    </button>
+
+  </form>
+
+</section>

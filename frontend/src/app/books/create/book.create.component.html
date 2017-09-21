@@ -1,0 +1,36 @@
+
+<form class="book-create-form" #createBookForm="ngForm" (ngSubmit)="onSubmit()" >
+
+  <p>Debug: {{book | json}}</p>
+
+  <div class="form-group">
+    <label class="control-label" for="title">Title</label>
+    <input type="text" class="form-control" [(ngModel)]="book.title"
+           name="title" id="title"
+           required maxlength="50" />
+  </div>
+  <div class="form-group">
+    <label class="control-label" for="summary">Summary</label>
+    <textarea class="form-control" [(ngModel)]="book.summary"
+              id="summary" name="summary"
+              rows="5" cols="50"></textarea>
+  </div>
+  <div class="form-group">
+    <label class="form-group" for="pubDate">Publication Date</label>
+    <input type="datetime-local" [(ngModel)]="book.pubDate"
+           id="pubDate" name="pubDate"
+           class="form-control" required />
+  </div>
+  <div class="form-group">
+    <label class="form-group" for="author">Author</label>
+    <select class="form-control" [(ngModel)]="book.author.id" name="author"
+            id="author">
+      <option *ngFor="let author of authors" [value]="author.id">
+        {{author.fullName}}
+      </option>
+    </select>
+  </div>
+  <button class="btn btn-primary" [disabled]="!createBookForm.form.valid">
+    Submit
+  </button>
+</form>

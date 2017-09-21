@@ -1,0 +1,22 @@
+
+<div class="author-detail">
+  <h3>{{author.fullName}}</h3>
+
+  <h4>Books from Author</h4>
+  <table class="table table-responsive table-hover table-striped table-books-from-author">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Summary</th>
+        <th>Publication Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{book.title}}</td>
+        <td>{{book.summary}}</td>
+        <td>{{book.pubDate | date:'dd/MM/yyyy HH:mm:ss'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
